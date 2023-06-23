@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled, { createGlobalStyle } from "styled-components/macro";
 import { isWidthUp } from "@material-ui/core/withWidth";
 import { spacing } from "@material-ui/system";
@@ -6,6 +6,8 @@ import { CssBaseline, Paper as MuiPaper, withWidth } from "@material-ui/core";
 
 import Navbar from "../components/Navbar";
 import AuthGuard from "../utils/AuthGuard";
+import { useDispatch } from "react-redux";
+import { getUsers } from "../redux/actions";
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -51,6 +53,12 @@ const MainContent = styled(Paper)`
 `;
 
 const Dashboard = ({ children, routes, width }) => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getUsers());
+  }, [dispatch]);
+
   return (
     <AuthGuard>
       <Root>

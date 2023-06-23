@@ -93,7 +93,11 @@ const AppBarComponent = () => {
         }`
       );
     } else if (pathPartArr.length === 1) {
-      setPageTitle(pathPartArr[pathPartArr.length - 1]);
+      if (pathPartArr[0] === "") {
+        setPageTitle("Posts");
+      } else {
+        setPageTitle(pathPartArr[0]);
+      }
     } else if (pathPartArr.length >= 2) {
       setPageTitle(
         `${pathPartArr[pathPartArr.length - 2]} / ${

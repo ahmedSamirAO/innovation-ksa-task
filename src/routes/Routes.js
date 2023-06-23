@@ -38,7 +38,7 @@ const Routes = () => (
         />
       ))}
 
-      <Redirect exact to="/gateway" />
+      <Redirect exact to="/" />
     </Switch>
   </Router>
 );

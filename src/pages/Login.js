@@ -41,7 +41,7 @@ const Login = () => {
     dispatch(loginUser(values.userId)).then((response) => {
       if (response) {
         saveCookie("userId", response.data[0].id);
-        history.push(`/posts`);
+        history.push(`/`);
       }
     });
   };

@@ -30,11 +30,9 @@ function AuthGuard({ children }) {
   }, [dispatch]);
 
   if (isLoaded && !isLoggedIn && pagePath !== "login") {
-    console.log("in redirect: ", isLoggedIn);
-
     return <Redirect to="/login" />;
   } else if (isLoaded && isLoggedIn && pagePath === "login") {
-    return <Redirect to="/posts" />;
+    return <Redirect to="/" />;
   }
 
   return children;

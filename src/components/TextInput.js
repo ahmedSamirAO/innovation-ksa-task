@@ -40,8 +40,8 @@ const TextInput = forwardRef(
       name,
       label = "",
       value,
-      errors,
-      touched,
+      errors = {},
+      touched = {},
       onChange,
       onBlur,
 

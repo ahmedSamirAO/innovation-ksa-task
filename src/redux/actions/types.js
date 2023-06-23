@@ -18,3 +18,8 @@ export const UsersActions = {
   SAVE_USERS: "[USER] SAVE_USERS",
   SAVE_USER: "[USER] SAVE_USER",
 };
+
+export const PostsActions = {
+  SAVE_POSTS: "[POSTS] SAVE_POSTS",
+  SAVE_POST: "[POSTS] SAVE_POST",
+};
