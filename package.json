@@ -29,6 +29,7 @@
     "@material-ui/pickers": "3.3.10",
     "@material-ui/styles": "4.11.3",
     "@material-ui/system": "4.11.3",
+    "axios": "0.21.1",
     "date-fns": "2.19.0",
     "deepmerge": "4.2.2",
     "formik": "2.2.6",

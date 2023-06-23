@@ -3,8 +3,6 @@ import styled, { createGlobalStyle } from "styled-components/macro";
 import { isWidthUp } from "@material-ui/core/withWidth";
 import { spacing } from "@material-ui/system";
 import { CssBaseline, Paper as MuiPaper, withWidth } from "@material-ui/core";
-
-import Navbar from "../components/Navbar";
 import AuthGuard from "../utils/AuthGuard";
 
 const GlobalStyle = createGlobalStyle`
@@ -59,7 +57,6 @@ const Dashboard = ({ children, routes, width }) => {
 
         <AppContent>
           <MainContent p={isWidthUp("lg", width) ? 12 : 5}>
-            <Navbar />
             {children}
           </MainContent>
         </AppContent>

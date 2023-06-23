@@ -5,8 +5,9 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
-import { homeRoutes } from "./index";
-import Default from "../layouts/default";
+import { authRoutes, homeRoutes } from "./index";
+import WebsiteLayout from "../layouts/default";
+import AuthLayout from "../layouts/Auth";
 
 const Routes = () => (
   <Router>
@@ -17,9 +18,22 @@ const Routes = () => (
           path={route.path}
           exact
           render={(props) => (
-            <Default>
+            <WebsiteLayout>
               <route.component {...props} />
-            </Default>
+            </WebsiteLayout>
+          )}
+        />
+      ))}
+
+      {authRoutes.map((route) => (
+        <Route
+          key={route.name}
+          path={route.path}
+          exact
+          render={(props) => (
+            <AuthLayout>
+              <route.component {...props} />
+            </AuthLayout>
           )}
         />
       ))}

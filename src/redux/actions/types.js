@@ -13,3 +13,8 @@ export const GatewayActions = {
   ADD_DEVICE: "[GATEWAY] ADD_DEVICE",
   REMOVE_DEVICE: "[GATEWAY] REMOVE_DEVICE",
 };
+
+export const UsersActions = {
+  SAVE_USERS: "[USER] SAVE_USERS",
+  SAVE_USER: "[USER] SAVE_USER",
+};

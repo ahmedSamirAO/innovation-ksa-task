@@ -8,9 +8,9 @@ export const getCookie = (name) => {
 };
 
 export const saveCookie = (name, value) => {
-  document.cookie = `${name}=${accessToken}; path=/`;
+  document.cookie = `${name}=${value}; path=/`;
 };
 
-export const deleteTokens = (name) => {
+export const deleteCookie = (name) => {
   document.cookie = `${name}=; path=/`;
 };
