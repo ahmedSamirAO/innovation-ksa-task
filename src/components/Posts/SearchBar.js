@@ -18,7 +18,7 @@ function PostsSearchBar({ searchText, changeSearchText }) {
       alignItems="center"
       container
       spacing={0}
-      mb={10}
+      mb={5}
       px={4}
       py={2}
     >

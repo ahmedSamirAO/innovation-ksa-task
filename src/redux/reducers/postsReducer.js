@@ -16,6 +16,12 @@ export default function reducer(state = initialState, actions) {
     case PostsActions.SAVE_POST:
       return {
         ...state,
+        posts: [actions.payload, ...state.posts],
+      };
+
+    case PostsActions.SAVE_SELECTED_POST:
+      return {
+        ...state,
         selectedPost: actions.payload,
       };
 

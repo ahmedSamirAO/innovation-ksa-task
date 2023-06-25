@@ -7,12 +7,14 @@ import styled from "styled-components/macro";
 import SearchBar from "../components/Posts/SearchBar";
 import { getPosts } from "../redux/actions";
 import Post from "../components/Posts/Post";
+import CreatePost from "../components/Posts/CreatePost";
 
 const ViewMore = styled(Typography)`
   font-size: 16px;
   margin-top: 40px;
   text-align: center;
   color: ${(props) => props.theme.palette.primary.main};
+  cursor: pointer;
 `;
 
 const Posts = () => {
@@ -66,6 +68,8 @@ const Posts = () => {
       <Helmet title="Gateway" />
 
       <SearchBar searchText={searchText} changeSearchText={changeSearchText} />
+
+      <CreatePost />
 
       {viewedPosts?.map((post) => (
         <Post key={post.id} post={post} />
