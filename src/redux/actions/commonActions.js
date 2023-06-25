@@ -36,3 +36,8 @@ export const saveSuccessMessage = ({ successMessage, isSuccess }) => ({
     successMessage,
   },
 });
+
+export const savePageTitle = (title) => ({
+  type: CommonActions.SAVE_PAGE_TITLE,
+  payload: title,
+});

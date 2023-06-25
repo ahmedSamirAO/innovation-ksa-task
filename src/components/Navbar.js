@@ -72,7 +72,7 @@ const AppBarComponent = () => {
   const location = useLocation();
   const pathname = location.pathname.slice(1);
 
-  const pageInfo = useSelector(({ common }) => common.title);
+  const currentPageTitle = useSelector(({ common }) => common.pageTitle);
   const user = useSelector(({ users }) => users.currentUser);
 
   const [pageTitle, setPageTitle] = useState("");
@@ -86,10 +86,10 @@ const AppBarComponent = () => {
   useEffect(() => {
     let pathPartArr = pathname.split("/");
 
-    if (pageInfo?.title) {
+    if (currentPageTitle) {
       setPageTitle(
-        `${pageInfo.title.substring(0, 20)}${
-          pageInfo.title.length > 20 ? "..." : ""
+        `${currentPageTitle.substring(0, 20)}${
+          currentPageTitle.length > 20 ? "..." : ""
         }`
       );
     } else if (pathPartArr.length === 1) {
@@ -105,7 +105,7 @@ const AppBarComponent = () => {
         }`
       );
     }
-  }, [pathname, pageInfo]);
+  }, [pathname, currentPageTitle]);
 
   const openLoginPage = () => {
     history.push("/login");

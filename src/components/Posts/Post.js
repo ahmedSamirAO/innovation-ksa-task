@@ -17,6 +17,7 @@ const HeadingGrid = styled(Grid)`
 const Title = styled(Typography)`
   font-size: 20px;
   font-weight: bold;
+  cursor: pointer;
 `;
 
 const AuthorName = styled(Typography)`
@@ -40,6 +41,10 @@ function Post({ post }) {
     return users.find((user) => user.id === post.userId)?.name;
   };
 
+  const openPostPage = () => {
+    history.push(`/post/${post.id}`);
+  };
+
   const openUserPage = () => {
     history.push(`/user/${post.userId}`);
   };
@@ -55,7 +60,7 @@ function Post({ post }) {
       py={2}
     >
       <Grid item xs={12}>
-        <Title>{post.title}</Title>
+        <Title onClick={openPostPage}>{post.title}</Title>
         <AuthorName onClick={openUserPage}>By: {getUserName()}</AuthorName>
         <Body>{post.body}</Body>
       </Grid>

@@ -5,6 +5,7 @@ const initialState = {
   errorMessage: "",
   isSuccess: false,
   successMessage: "",
+  pageTitle: "",
 };
 
 const commonReducer = (state = initialState, action) => {
@@ -21,6 +22,12 @@ const commonReducer = (state = initialState, action) => {
         ...state,
         isSuccess: action.payload.isSuccess,
         successMessage: action.payload.successMessage,
+      };
+    }
+    case CommonActions.SAVE_PAGE_TITLE: {
+      return {
+        ...state,
+        pageTitle: action.payload,
       };
     }
     default: {

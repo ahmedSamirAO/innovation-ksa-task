@@ -34,6 +34,28 @@ export const createPost = (values) => {
   };
 };
 
+export const getComments = (postId) => {
+  return async (dispatch) => {
+    return API.get(`/posts/${postId}/comments`).then((response) => {
+      dispatch(saveComments(response.data));
+    });
+  };
+};
+
+export const createComment = (values) => {
+  return async (dispatch) => {
+    return API.post("/comments", values)
+      .then((response) => {
+        dispatch(saveComment(response.data));
+        return true;
+      })
+      .catch((error) => {
+        console.log(error);
+        return false;
+      });
+  };
+};
+
 export const savePosts = (posts) => ({
   type: PostsActions.SAVE_POSTS,
   payload: posts,
@@ -47,4 +69,14 @@ export const savePost = (post) => ({
 export const saveSelectedPost = (post) => ({
   type: PostsActions.SAVE_SELECTED_POST,
   payload: post,
+});
+
+export const saveComments = (comments) => ({
+  type: PostsActions.SAVE_COMMENTS,
+  payload: comments,
+});
+
+export const saveComment = (comment) => ({
+  type: PostsActions.SAVE_COMMENT,
+  payload: comment,
 });
