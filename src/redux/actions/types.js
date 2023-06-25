@@ -18,6 +18,7 @@ export const GatewayActions = {
 export const UsersActions = {
   SAVE_USERS: "[USER] SAVE_USERS",
   SAVE_USER: "[USER] SAVE_USER",
+  SAVE_SELECTED_USER: "[USER] SAVE_SELECTED_USER",
 };
 
 export const PostsActions = {

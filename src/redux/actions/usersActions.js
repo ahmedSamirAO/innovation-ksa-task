@@ -14,6 +14,7 @@ export const getUserById = (userId) => {
   return async (dispatch) => {
     return API.get(`/users?id=${userId}`).then((response) => {
       if (response.data.length > 0) {
+        dispatch(saveSelectedUser(response.data[0]));
         return response;
       }
     });
@@ -45,5 +46,10 @@ export const saveUsers = (users) => ({
 
 export const saveUser = (user) => ({
   type: UsersActions.SAVE_USER,
+  payload: user,
+});
+
+export const saveSelectedUser = (user) => ({
+  type: UsersActions.SAVE_SELECTED_USER,
   payload: user,
 });

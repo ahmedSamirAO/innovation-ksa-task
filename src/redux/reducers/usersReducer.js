@@ -23,6 +23,13 @@ export default function reducer(state = initialState, actions) {
       };
     }
 
+    case UsersActions.SAVE_SELECTED_USER: {
+      return {
+        ...state,
+        selectedUser: actions.payload,
+      };
+    }
+
     default:
       return state;
   }
