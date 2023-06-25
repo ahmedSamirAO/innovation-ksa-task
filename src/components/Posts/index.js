@@ -48,7 +48,7 @@ const PostsComponents = ({ userId }) => {
 
     if (filteredUser !== "All") {
       filteredPosts = filteredPosts.filter(
-        (post) => post.userId.toString() === filteredUser
+        (post) => post.userId.toString() === filteredUser.toString()
       );
     }
 
@@ -71,11 +71,17 @@ const PostsComponents = ({ userId }) => {
     } else {
       setViewedPosts((viewedPosts) => [...viewedPosts, ...filteredPosts]);
     }
-  }, [listedPosts, page, filteredUser]);
+  }, [listedPosts, page]);
 
   return (
     <React.Fragment>
-      <SearchBar searchText={searchText} changeSearchText={changeSearchText} />
+      <SearchBar
+        searchText={searchText}
+        changeSearchText={changeSearchText}
+        filteredUser={filteredUser}
+        setFilteredUser={setFilteredUser}
+        userId={userId}
+      />
 
       {!userId && <CreatePost />}
 
